@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+    <div class="row">
+        <div class="column is-md-8 is-offset-2 main">
+            <div class="single">
+                <div class="single-title">
+                    {{.Title}}
+                </div>
+                {{.Content}}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{partial "footer.html" . }}

@@ -1,0 +1,119 @@
+@import "../../node_modules/@forever9/lego/lego";
+@import "single";
+
+@include container();
+@include row();
+@include column();
+@include gen-grids();
+@include offset();
+
+/* monda-regular */
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  src: url('//lib.baomitu.com/fonts/monda/monda-regular.eot'); /* IE9 Compat Modes */
+  src: local('Monda'), local('Monda-Normal'),
+  url('//lib.baomitu.com/fonts/monda/monda-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.woff') format('woff'), /* Modern Browsers */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.svg#Monda') format('svg'); /* Legacy iOS */
+}
+
+html {
+  --theme-color: #88BDEC;
+}
+
+body {
+  font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+  background: #fff;
+}
+
+.main {
+  padding-top: 100px;
+}
+
+.nav {
+  padding: 10px 0;
+  @include flex-y-center;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-menu {
+  @include flex-y-center;
+
+  a {
+    padding: 10px 14px;
+    color: #4C4E4D;
+
+    &:hover {
+      color: var(--theme-color);
+    }
+  }
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+
+  img {
+    display: block;
+    height: 100%;
+  }
+}
+
+.post {
+  display: flex;
+}
+
+.post-left {
+  min-width: 50px;
+}
+
+.post-title {
+  font-size: 20px;
+  color: #000;
+}
+
+.post-date {
+  color: #999;
+  font-size: 12px;
+}
+
+.post-summary {
+  color: #999;
+  font-size: 12px;
+}
+
+.post-right {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 50px;
+
+  &:before {
+    content: ' ';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    top: 12px;
+    background: #DC9E5B;
+  }
+
+  &:after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: #f0f0f0;
+    left: 3px;
+    top: 20px;
+  }
+}
