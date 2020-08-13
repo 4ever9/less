@@ -3,23 +3,31 @@
 <div class="container">
     <div class="row">
         <div class="column is-md-8 is-offset-2 main">
-            {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
-            {{ range $paginator.Pages }}
-            <div class="post">
-                <div class="post-left">
-                <span class="post-date">
-                {{ .Date.Format "01-02" }}
-                </span>
+            {{ range (.Site.RegularPages.GroupByDate "2006") }}
+                <div class="posts">
+                    <div class="year">{{ .Key }}</div>
+                    {{ range .Pages }}
+                        <div class="post">
+                            <div class="post-left">
+                            <span class="post-date">
+                                {{ .Date.Format "01-02" }}
+                            </span>
+                            </div>
+                            <div class="post-right">
+                                <a class="post-title" href="{{.Permalink}}">
+                                    {{.Title}}
+                                </a>
+                                <div class="post-summary">
+                                    {{ $length := (len .Summary) }}
+                                    {{ if gt (len .Summary) 100 }}
+                                        {{ $length = 100 }}
+                                    {{ end }}
+                                    {{ slicestr .Summary 0 $length | plainify | htmlUnescape }}
+                                </div>
+                            </div>
+                        </div>
+                    {{ end }}
                 </div>
-                <div class="post-right">
-                    <a class="post-title" href="{{.Permalink}}">
-                        {{.Title}}
-                    </a>
-                    <div class="post-summary">
-                        {{.Summary}}
-                    </div>
-                </div>
-            </div>
             {{ end }}
         </div>
     </div>

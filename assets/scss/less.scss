@@ -1,5 +1,6 @@
 @import "../../node_modules/@forever9/lego/lego";
 @import "single";
+@import "footer";
 
 @include container();
 @include row();
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-  font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
   background: #fff;
 }
 
@@ -66,12 +67,35 @@ a {
   }
 }
 
+.posts {
+  margin-bottom: 40px;
+
+  &:nth-child(2n+1) {
+    .post-right {
+      &:before {
+        background: #71D6E8;
+      }
+    }
+  }
+
+  .post {
+    &:last-child {
+      .post-right {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .post {
   display: flex;
 }
 
 .post-left {
   min-width: 50px;
+  line-height: 1.5;
 }
 
 .post-title {
@@ -116,4 +140,14 @@ a {
     left: 3px;
     top: 20px;
   }
+}
+
+.post-title {
+  font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+}
+
+.year {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
 }

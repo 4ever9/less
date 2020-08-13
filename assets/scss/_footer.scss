@@ -1,0 +1,17 @@
+
+footer {
+  padding: 20px 0;
+  @include flex-y-center;
+  justify-content: center;
+  text-align: center;
+  color: #5D5C5C;
+
+  a {
+    color: #5D5C5C;
+  }
+
+  .copyright {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

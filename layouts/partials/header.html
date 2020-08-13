@@ -5,22 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{ $sass := resources.Get "scss/less.scss" }}
-    {{ $style := $sass | resources.ToCSS }}
+    {{ $options := (dict "targetPath" "less.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $style := resources.Get "scss/less.scss" | resources.ToCSS $options }}
+    <link href="/images/logo.png" rel="icon" type="image/ico">
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1995642_svj67i6zduq.css">
-    <title>常·九</title>
+    <title>面向自由编程</title>
 </head>
 <body>
 <div class="container">
     <div class="nav">
-        <figure class="logo">
+        <a class="logo" href="/">
             <img src="/images/logo.png" alt="">
-        </figure>
+        </a>
         <ul class="nav-menu">
-            <li>
-                <a href="">首页</a>
-            </li>
             <li>
                 <a href="">系列</a>
             </li>
