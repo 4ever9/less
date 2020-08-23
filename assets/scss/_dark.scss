@@ -1,0 +1,32 @@
+
+.dark {
+  background: #16171c;
+
+  .icon-moon {
+    color: #ffbe00 !important;
+  }
+
+  .year {
+    color: #f0f0f0;
+  }
+
+  .post-right {
+    &:after {
+      background: #000;
+    }
+  }
+
+  .post-title, .single-title {
+    color: #d0d0d0;
+  }
+
+  .single-content {
+    color: #b0b0b0;
+  }
+
+  .is-active-li {
+    & > a {
+      color: #f0f0f0!important;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.logo {
+  height: 30px;
+  width: auto;
+
+  img {
+    display: block;
+    height: 100%;
+  }
+}
+
+.nav {
+  padding: 10px 0;
+  @include flex-y-center;
+  justify-content: space-between;
+
+  .icon-moon {
+    color: #999;
+  }
+}
+
+.nav-menu {
+  @include flex-y-center;
+
+  a {
+    padding: 10px 14px;
+    color: #4C4E4D;
+
+    &:hover {
+      color: var(--theme-color);
+    }
+  }
+}

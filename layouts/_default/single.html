@@ -1,16 +1,33 @@
-{{ partial "header.html" . }}
-
-<div class="container">
-    <div class="row">
-        <div class="column is-md-8 is-offset-2 main">
-            <div class="single">
-                <div class="single-title">
-                    {{.Title}}
+{{ define "main" }}
+    <div class="container">
+        <div class="row">
+            <div class="column is-md-8 is-12 is-offset-md-2 main">
+                <div class="single">
+                    <div class="single-title">
+                        {{.Title}}
+                    </div>
+                    <div class="single-meta">
+                        <div class="single-date">
+                            {{ .Date.Format "2006-01-02" }}
+                        </div>
+                        {{ if .Params.tags }}
+                            <div class="single-tags">
+                                {{ range $k, $v := .Params.tags }}
+                                    <a class="single-tag" href="{{ "tags/" | absLangURL }}{{ . }}">
+                                        #{{ . }}
+                                    </a>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </div>
+                    <div class="single-content">
+                        {{.Content}}
+                    </div>
                 </div>
-                {{.Content}}
+            </div>
+            <div class="column is-md-2" style="position: relative">
+                <div class="single-toc"></div>
             </div>
         </div>
     </div>
-</div>
-
-{{partial "footer.html" . }}
+{{ end }}

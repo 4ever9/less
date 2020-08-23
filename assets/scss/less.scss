@@ -1,12 +1,42 @@
 @import "../../node_modules/@forever9/lego/lego";
+@mixin mobile() {
+  @include media-down(map-get($breakpoints, md)) {
+    @content
+  }
+}
+@import "dark";
+@import "heaader";
 @import "single";
 @import "footer";
 
 @include container();
 @include row();
-@include column();
+@include column($grid-gap: 30px);
 @include gen-grids();
+
+$breakpoints: (md:768px, lg:992px, xl:1200px);
+
+@mixin offset($name: is-offset, $column-number: 12, $breakpoints: $breakpoints) {
+  @for $i from 1 through $column-number {
+    .#{$name}-#{$i} {
+      margin-left: percentage($i / $column-number);
+    }
+  }
+
+  @each $breakpoint, $width in $breakpoints {
+    @include media-up($width) {
+      @for $i from 1 through 12 {
+        .#{$name}-#{$breakpoint}-#{$i} {
+          margin-left: percentage($i / $column-number);
+        }
+      }
+    }
+  }
+}
+
 @include offset();
+
+
 
 /* monda-regular */
 @font-face {
@@ -30,42 +60,18 @@ body {
   background: #fff;
 }
 
-.main {
-  padding-top: 100px;
+.icon {
+  cursor: pointer;
 }
 
-.nav {
-  padding: 10px 0;
-  @include flex-y-center;
-  justify-content: space-between;
+.main {
+  padding-top: 100px;
 }
 
 a {
   text-decoration: none;
 }
 
-.nav-menu {
-  @include flex-y-center;
-
-  a {
-    padding: 10px 14px;
-    color: #4C4E4D;
-
-    &:hover {
-      color: var(--theme-color);
-    }
-  }
-}
-
-.logo {
-  height: 30px;
-  width: auto;
-
-  img {
-    display: block;
-    height: 100%;
-  }
-}
 
 .posts {
   margin-bottom: 40px;
@@ -95,28 +101,38 @@ a {
 
 .post-left {
   min-width: 50px;
-  line-height: 1.5;
+  padding-top: 8px;
 }
 
 .post-title {
-  font-size: 20px;
+  //font-weight: 500;
+  font-size: 22px;
   color: #000;
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
 .post-date {
   color: #999;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .post-summary {
   color: #999;
-  font-size: 12px;
+  font-size: 14px;
+  max-height: 20px;
+  overflow: hidden;
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .post-right {
   position: relative;
   padding-left: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 
   &:before {
     content: ' ';
@@ -147,7 +163,7 @@ a {
 }
 
 .year {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 30px;
   font-weight: 500;
 }

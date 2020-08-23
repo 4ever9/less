@@ -9,10 +9,11 @@ homepage = "http://example.com/"
 tags = []
 features = []
 min_version = "0.41.0"
+siteCreated = 2020
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Aiden X"
+  homepage = "https://forever9.com"
 
 # If porting an existing theme
 [original]
