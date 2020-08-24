@@ -1,20 +1,24 @@
 @import "../../node_modules/@forever9/lego/lego";
+
+$breakpoints: (md:856px);
+$container-max-widths: (md: 800px,);
 @mixin mobile() {
   @include media-down(map-get($breakpoints, md)) {
     @content
   }
 }
+
+@import "font";
 @import "dark";
 @import "heaader";
 @import "single";
 @import "footer";
 
-@include container();
+@include container($breakpoints: $breakpoints);
 @include row();
 @include column($grid-gap: 30px);
 @include gen-grids();
 
-$breakpoints: (md:768px, lg:992px, xl:1200px);
 
 @mixin offset($name: is-offset, $column-number: 12, $breakpoints: $breakpoints) {
   @for $i from 1 through $column-number {
@@ -36,27 +40,12 @@ $breakpoints: (md:768px, lg:992px, xl:1200px);
 
 @include offset();
 
-
-
-/* monda-regular */
-@font-face {
-  font-family: 'Monda';
-  font-style: normal;
-  src: url('//lib.baomitu.com/fonts/monda/monda-regular.eot'); /* IE9 Compat Modes */
-  src: local('Monda'), local('Monda-Normal'),
-  url('//lib.baomitu.com/fonts/monda/monda-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//lib.baomitu.com/fonts/monda/monda-regular.woff2') format('woff2'), /* Super Modern Browsers */
-  url('//lib.baomitu.com/fonts/monda/monda-regular.woff') format('woff'), /* Modern Browsers */
-  url('//lib.baomitu.com/fonts/monda/monda-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-  url('//lib.baomitu.com/fonts/monda/monda-regular.svg#Monda') format('svg'); /* Legacy iOS */
-}
-
 html {
-  --theme-color: #88BDEC;
+  --theme-color: #5dc2c3;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
   background: #fff;
 }
 
@@ -65,7 +54,8 @@ body {
 }
 
 .main {
-  padding-top: 100px;
+  padding-top: 40px;
+  max-width: 100%;
 }
 
 a {
@@ -74,40 +64,18 @@ a {
 
 
 .posts {
-  margin-bottom: 40px;
-
-  &:nth-child(2n+1) {
-    .post-right {
-      &:before {
-        background: #71D6E8;
-      }
-    }
-  }
-
-  .post {
-    &:last-child {
-      .post-right {
-        &:after {
-          display: none;
-        }
-      }
-    }
-  }
+  margin-bottom: 80px;
 }
 
 .post {
-  display: flex;
-}
-
-.post-left {
-  min-width: 50px;
-  padding-top: 8px;
+  margin-bottom: 30px;
 }
 
 .post-title {
-  //font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;
   color: #000;
+  display: block;
+  margin-bottom: 10px;
   @include mobile {
     font-size: 18px;
   }
@@ -115,55 +83,29 @@ a {
 
 .post-date {
   color: #999;
-  font-size: 13px;
-}
-
-.post-summary {
-  color: #999;
-  font-size: 14px;
-  max-height: 20px;
-  overflow: hidden;
-
-  @include mobile {
-    display: none;
-  }
-}
-
-.post-right {
-  position: relative;
-  padding-left: 30px;
-  padding-bottom: 40px;
-
-  &:before {
-    content: ' ';
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-radius: 8px;
-    position: absolute;
-    left: 0;
-    top: 12px;
-    background: #DC9E5B;
-  }
-
-  &:after {
-    position: absolute;
-    content: ' ';
-    display: block;
-    width: 1px;
-    height: 100%;
-    background: #f0f0f0;
-    left: 3px;
-    top: 20px;
-  }
+  font-size: 12px;
 }
 
 .post-title {
-  font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+  //font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
 }
 
 .year {
-  font-size: 22px;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 40px;
   font-weight: 500;
+  padding-left: 20px;
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    background: var(--theme-color);
+    position: absolute;
+    left: 0;
+    top: 12px;
+  }
 }

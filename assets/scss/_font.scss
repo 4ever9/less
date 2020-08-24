@@ -1,0 +1,27 @@
+
+/* monda-regular */
+@font-face {
+  font-family: 'Monda';
+  font-style: normal;
+  src: url('//lib.baomitu.com/fonts/monda/monda-regular.eot'); /* IE9 Compat Modes */
+  src: local('Monda'), local('Monda-Normal'),
+  url('//lib.baomitu.com/fonts/monda/monda-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.woff') format('woff'), /* Modern Browsers */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('//lib.baomitu.com/fonts/monda/monda-regular.svg#Monda') format('svg'); /* Legacy iOS */
+}
+
+/* merriweather-regular */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: regular;
+  src: url('//lib.baomitu.com/fonts/merriweather/merriweather-regular.eot'); /* IE9 Compat Modes */
+  src: local('Merriweather'), local('Merriweather-Normal'),
+  url('//lib.baomitu.com/fonts/merriweather/merriweather-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//lib.baomitu.com/fonts/merriweather/merriweather-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('//lib.baomitu.com/fonts/merriweather/merriweather-regular.woff') format('woff'), /* Modern Browsers */
+  url('//lib.baomitu.com/fonts/merriweather/merriweather-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('//lib.baomitu.com/fonts/merriweather/merriweather-regular.svg#Merriweather') format('svg'); /* Legacy iOS */
+}

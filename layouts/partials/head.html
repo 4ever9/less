@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{ $options := (dict "targetPath" "less.css" "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $style := resources.Get "scss/less.scss" | resources.ToCSS $options }}
-    <link href="/images/logo.png" rel="icon" type="image/ico">
+    <link href="/images/favicon.png" rel="icon" type="image/ico">
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1995642_5r07rt5x862.css">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/tocbot/4.11.1/tocbot.css">
