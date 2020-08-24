@@ -5,6 +5,8 @@
   font-size: 16px;
 
   .single-title {
+    line-height: 1.2;
+    margin-bottom: 20px;
     font-size: 30px;
     font-weight: 500;
     font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
@@ -21,7 +23,8 @@
     border-radius: 2px;
     padding: 20px;
     overflow: auto;
-
+    line-height: 1.4;
+    
     code {
       font-size: 14px;
     }
@@ -29,6 +32,8 @@
 
   code {
     font-family: "menlo", serif;
+    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   p {
@@ -36,7 +41,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: 600;
     outline: none;
     margin: 30px 0 30px;
     font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
@@ -64,16 +69,9 @@
   }
 }
 
-.single-meta {
-  color: #999;
-
-  .single-date {
-    margin-right: 10px;
-  }
-  a {
-    color: #999;
-    margin-right: 10px;
-  }
+.single-date {
+  margin-right: 10px;
+  color: #a0a0a0;
 }
 
 .single-toc {

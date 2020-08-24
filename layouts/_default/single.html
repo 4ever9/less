@@ -5,20 +5,18 @@
                 <div class="single-title">
                     {{.Title}}
                 </div>
-                <div class="single-meta">
                     <div class="single-date">
                         {{ .Date.Format "2006-01-02" }}
                     </div>
-                    {{ if .Params.tags }}
-                        <div class="single-tags">
-                            {{ range $k, $v := .Params.tags }}
-                                <a class="single-tag" href="{{ "tags/" | absLangURL }}{{ . }}">
-                                    #{{ . }}
-                                </a>
-                            {{ end }}
-                        </div>
-                    {{ end }}
-                </div>
+<!--                     {{ if .Params.tags }} -->
+<!--                         <div class="single-tags"> -->
+<!--                             {{ range $k, $v := .Params.tags }} -->
+<!--                                 <a class="single-tag" href="{{ "tags/" | absLangURL }}{{ . }}"> -->
+<!--                                     #{{ . }} -->
+<!--                                 </a> -->
+<!--                             {{ end }} -->
+<!--                         </div> -->
+<!--                     {{ end }} -->
                 <div class="single-content">
                     {{.Content}}
                 </div>
