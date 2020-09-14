@@ -3,10 +3,15 @@
   line-height: 2;
   color: #4C4E4D;
   font-size: 16px;
+  display: flex;
+
+  .single-body {
+    max-width: 100%;
+  }
 
   .single-title {
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 30px;
     font-weight: 500;
     font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
@@ -23,10 +28,13 @@
     border-radius: 2px;
     padding: 20px;
     overflow: auto;
-    line-height: 1.4;
-    
+    line-height: 1.6;
+    background: #111115 !important;
+
     code {
       font-size: 14px;
+      white-space: inherit;
+      word-break: inherit;
     }
   }
 
@@ -70,8 +78,13 @@
 }
 
 .single-date {
-  margin-right: 10px;
   color: #a0a0a0;
+  margin-bottom: 10px;
+}
+
+.single-tag {
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 .single-toc {
@@ -82,7 +95,6 @@
   color: #909090;
   position: fixed;
   top: 50%;
-  right: 0;
   transform: translate(0, -50%);
 
   @include mobile {

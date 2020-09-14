@@ -13,6 +13,7 @@ $container-max-widths: (md: 800px,);
 @import "heaader";
 @import "single";
 @import "footer";
+@import "taxonomy";
 
 @include container($breakpoints: $breakpoints);
 @include row();

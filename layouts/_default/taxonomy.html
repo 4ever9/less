@@ -1,7 +1,10 @@
 {{ define "main" }}
     <div class="container">
         <div class="main">
-            {{ range (.Site.RegularPages.GroupByDate "2006") }}
+            <div class="taxonomy-name">
+                #{{.Name}}(共{{ len .Data.Pages }}篇)
+            </div>
+            {{ range (.RegularPages.GroupByDate "2006") }}
                 <div class="posts">
                     <div class="year">{{ .Key }}</div>
                     {{ range .Pages }}
@@ -10,8 +13,8 @@
                                 {{.Title}}
                             </a>
                             <span class="post-date">
-                                    {{ .Date.Format "Jan 02" }}
-                                </span>
+                                {{ .Date.Format "Jan 02" }}
+                            </span>
                         </div>
                     {{ end }}
                 </div>
