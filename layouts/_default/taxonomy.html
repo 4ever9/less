@@ -2,15 +2,15 @@
     <div class="container">
         <div class="main">
             <div class="taxonomy-name">
-                #{{.Name}}(共{{ len .Data.Pages }}篇)
+                #{{ .Name }}(共{{ len .Data.Pages }}篇)
             </div>
             {{ range (.RegularPages.GroupByDate "2006") }}
                 <div class="posts">
                     <div class="year">{{ .Key }}</div>
                     {{ range .Pages }}
                         <div class="post">
-                            <a class="post-title" href="{{.Permalink}}">
-                                {{.Title}}
+                            <a class="post-title" href="{{ .Permalink }}">
+                                {{ .Title }}
                             </a>
                             <span class="post-date">
                                 {{ .Date.Format "Jan 02" }}

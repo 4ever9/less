@@ -6,12 +6,12 @@
                     <div class="year">{{ .Key }}</div>
                     {{ range .Pages }}
                         <div class="post">
-                            <a class="post-title" href="{{.Permalink}}">
-                                {{.Title}}
+                            <a class="post-title" href="{{ .Permalink }}">
+                                {{ .Title }}
                             </a>
                             <span class="post-date">
-                                    {{ .Date.Format "Jan 02" }}
-                                </span>
+                                {{ .Date.Format "Jan 02" }}
+                            </span>
                         </div>
                     {{ end }}
                 </div>

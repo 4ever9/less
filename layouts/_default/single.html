@@ -3,30 +3,28 @@
         <div class="row">
             <div class="main single">
                 <div class="single-body column">
-                    <div class="single-title">
-                        {{.Title}}
-                    </div>
+                    <div class="single-title">{{ .Title }}</div>
                     <div class="single-date">
                         {{ .Date.Format "2006-01-02" }}
                     </div>
                     <div class="single-tags">
                         {{ range (.GetTerms "tags") }}
-                            <a class="single-tag" href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+                            <a class="single-tag" href="{{ .Permalink }}">
+                                #{{ .LinkTitle }}
+                            </a>
                         {{ end }}
                     </div>
-                    <div class="single-content">
-                        {{.Content}}
-                    </div>
+                    <div class="single-content">{{ .Content }}</div>
                 </div>
-
             </div>
-            <script src="https://utteranc.es/client.js"
-                    repo="4ever9/blog-comments"
-                    issue-term="pathname"
-                    theme="github-light"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+            <script
+                src="https://utteranc.es/client.js"
+                repo="4ever9/blog-comments"
+                issue-term="pathname"
+                theme="github-light"
+                crossorigin="anonymous"
+                async
+            ></script>
             <div class="single-toc-wrap">
                 <div class="single-toc"></div>
             </div>

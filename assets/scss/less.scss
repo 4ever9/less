@@ -1,10 +1,14 @@
 @import "../../node_modules/@forever9/lego/lego";
 
-$breakpoints: (md:856px);
-$container-max-widths: (md: 800px,);
+$breakpoints: (
+  md: 856px,
+);
+$container-max-widths: (
+  md: 800px,
+);
 @mixin mobile() {
   @include media-down(map-get($breakpoints, md)) {
-    @content
+    @content;
   }
 }
 
@@ -20,8 +24,11 @@ $container-max-widths: (md: 800px,);
 @include column($grid-gap: 30px);
 @include gen-grids();
 
-
-@mixin offset($name: is-offset, $column-number: 12, $breakpoints: $breakpoints) {
+@mixin offset(
+  $name: is-offset,
+  $column-number: 12,
+  $breakpoints: $breakpoints
+) {
   @for $i from 1 through $column-number {
     .#{$name}-#{$i} {
       margin-left: percentage($i / $column-number);
@@ -46,7 +53,9 @@ html {
 }
 
 body {
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, PingFang SC,
+    Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue,
+    helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
   background: #fff;
 }
 
@@ -62,7 +71,6 @@ body {
 a {
   text-decoration: none;
 }
-
 
 .posts {
   margin-bottom: 80px;
@@ -88,7 +96,9 @@ a {
 }
 
 .post-title {
-  font-family: 'Monda', -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
+  font-family: "Monda", -apple-system, BlinkMacSystemFont, PingFang SC,
+    Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue,
+    helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
 }
 
 .year {

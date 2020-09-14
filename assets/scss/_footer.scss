@@ -1,14 +1,13 @@
-
 footer {
   padding: 20px 0;
   @include flex-y-center;
   justify-content: center;
   text-align: center;
-  color: #5D5C5C;
+  color: #5d5c5c;
   font-size: 14px;
 
   a {
-    color: #5D5C5C;
+    color: #5d5c5c;
   }
 
   .copyright {
