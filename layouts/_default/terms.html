@@ -1,1 +1,17 @@
-term
+{{ define "main" }}
+    {{ $type := .Type }}
+    <div class="container">
+        <div class="main terms">
+            <h2>Total {{ len .Data.Terms }} {{ .Type }}</h2>
+            <div class="row">
+                {{ range $k, $v := .Data.Terms.ByCount }}
+                    <li class="column is-lg-6">
+                        <a href="{{ .Page.Permalink }}">
+                            {{ .Name }} <span>({{ .Count }})</span>
+                        </a>
+                    </li>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+{{ end }}

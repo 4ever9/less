@@ -4,3 +4,27 @@
   color: #909090;
   font-family: "Monda", -apple-system, sans-serif;
 }
+
+.terms {
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  li {
+    margin-bottom: 15px;
+  }
+
+  a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #161816;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    span {
+      color: #a0a0a0;
+    }
+  }
+}

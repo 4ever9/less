@@ -66,6 +66,7 @@ body {
 .main {
   padding-top: 40px;
   max-width: 100%;
+  min-height: calc(100% - 160px);
 }
 
 a {
@@ -95,7 +96,8 @@ a {
   font-size: 12px;
 }
 
-.post-title {
+.post-title,
+h2 {
   font-family: "Monda", -apple-system, BlinkMacSystemFont, PingFang SC,
     Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", helvetica neue,
     helvetica, ubuntu, roboto, noto, segoe ui, Arial, sans-serif;
