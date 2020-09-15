@@ -3,20 +3,14 @@
 
 name = "Less"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/4ever9/less/blob/master/LICENSE"
 description = ""
 homepage = "http://example.com/"
-tags = []
-features = []
+tags = ["blog"]
+features = ["simple"]
 min_version = "0.41.0"
 siteCreated = 2020
 
 [author]
   name = "Aiden X"
   homepage = "https://forever9.com"
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
