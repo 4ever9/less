@@ -6,7 +6,7 @@ A hugo theme.
 
 ## Usage
 
-```
+```bash
 cd <YOUR_HUGO_ROOT>
 git submodule add git@github.com:4ever9/less.git themes/less
 ```
@@ -15,7 +15,7 @@ git submodule add git@github.com:4ever9/less.git themes/less
 
 Add the follow configuration to your `config.toml`.
 
-```
+```toml
 [params.utteranc]
 repo = '4ever9/blog-comments' // your utteranc repo
 ```
