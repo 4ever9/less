@@ -17,5 +17,5 @@ Add the follow configuration to your `config.toml`.
 
 ```toml
 [params.utteranc]
-repo = '4ever9/blog-comments' // your utteranc repo
+repo = '4ever9/blog-comments' # your utteranc repo
 ```
