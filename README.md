@@ -2,6 +2,8 @@
 
 A hugo theme.
 
+![Screenshot](https://github.com/4ever9/less/raw/master/images/screenshot.png)
+
 ## Usage
 
 ```
