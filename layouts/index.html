@@ -1,7 +1,7 @@
 {{ define "main" }}
     <div class="container">
         <div class="main">
-            {{ range (.Site.RegularPages.GroupByDate "2006") }}
+            {{ range (where .Site.RegularPages "Type" "in" .Site.Params.mainSections).GroupByDate "2006" }}
                 <div class="posts">
                     <div class="year">{{ .Key }}</div>
                     {{ range .Pages }}
